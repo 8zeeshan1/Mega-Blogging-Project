@@ -18,3 +18,21 @@ If you are developing a production application, we recommend using TypeScript wi
 ## Notes: What I learnt
 
 We are using App Write for Backend as a service.
+We will be using html-react-parser: For proper displaying, Redux.
+react-hook-form: for better controlling of the form.
+
+We will create two env. one (.env) another is (.env.sample) so that whatever we have we can import it from here instead of taking env everywhere. Sample file is created so that other developers of the team can have the access to atleast know what are the key names of the environment variables and (.sampl) file is pushed in the github.
+When we add a new environment variable we need to restart the application.
+
+If we are making the project from the CRA then it is important to define the environment variable from (REACT_APP_<>) and we can access them like process.env.REACT_APP_<> .
+But if we create it from the vite then, we define the environment keys like (VITE_<>) and we can access them by 
+import.meta.env.VITE_<>.
+
+Now after adding all the environment variable, We will visit appwrite and create a project there(have to configure it properly).
+title 
+content 
+featured image
+status
+userId
+
+There is a good practice of making a folder and a file and accessing all the values of env file in the object and casting them to the string so that in the production application doesn't crash when deployed. #It is a good practice.
