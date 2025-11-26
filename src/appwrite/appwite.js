@@ -33,4 +33,22 @@ export class AuthService{
             throw error;
         }
     }
+
+    async getCurrentUser(){
+        try{
+        return await this.account.get()
+        }catch(error){
+            console.log("getUser error", error)
+            throw error;
+        }
+    }
+
+    async logoutUser(id){
+        try{
+            return await this.account.deleteSession(id)
+        } catch(error){
+            console.log("logout error", error)
+            throw error
+        }
+    }
 }
