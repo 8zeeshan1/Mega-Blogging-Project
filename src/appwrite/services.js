@@ -88,7 +88,39 @@ export class Services{
         }
     }
 
-   
+    async uploadFile(file){
+        try{
+            return await this.bucket.createFile(
+                conf.BUCKET_ID,
+                ID.unique(),
+                file,
+            )
+        }catch(err){
+            console.log("Error while uploading the file.", err)
+        }
+    }
+
+    async removeFile(fileId){
+        try{
+            return await this.bucket.deleteFile(
+                conf.BUCKET_ID,
+                fileId
+            )
+        }catch(err){
+            console.log("Error while deleting the file.", err)
+        }
+    }
+
+    async previewFile(fileId){
+        try{
+            return await this.bucket.getFilePreview(
+                conf.BUCKET_ID,
+                fileId
+            )
+        }catch(err){
+            console.log("Error while previewing the file.", err)
+        }
+    }
 }
 
 const services = new Services()
