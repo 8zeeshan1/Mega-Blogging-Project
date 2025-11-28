@@ -6,7 +6,7 @@ const initialState = {
 }
 
 const slice = createSlice({
-    name: "megaproject",
+    name: "auth",
     initialState,
     reducers: {
         login: (state, action)=>{
